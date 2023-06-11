@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "GC3Ewk+CyAbKC2k6Q3tzVnnJBNBKu4aAJ/s696WimipnM80q08qNFpXKxqt/5R0VFQ3THATvnmw2a0zmG5F8fQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Fatih_Kucukkara\\source\\repos\\Net7MinimalApiFullCourse\\Application\\Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Fatih_Kucukkara\\.nuget\\packages\\mediatr\\11.1.0\\mediatr.11.1.0.nupkg.sha512",
+    "C:\\Users\\Fatih_Kucukkara\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

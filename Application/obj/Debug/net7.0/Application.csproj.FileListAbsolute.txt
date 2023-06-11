@@ -1,0 +1,12 @@
+C:\Users\Fatih_Kucukkara\source\repos\Net7MinimalApiFullCourse\Application\bin\Debug\net7.0\Application.deps.json
+C:\Users\Fatih_Kucukkara\source\repos\Net7MinimalApiFullCourse\Application\bin\Debug\net7.0\Application.dll
+C:\Users\Fatih_Kucukkara\source\repos\Net7MinimalApiFullCourse\Application\bin\Debug\net7.0\Application.pdb
+C:\Users\Fatih_Kucukkara\source\repos\Net7MinimalApiFullCourse\Application\obj\Debug\net7.0\Application.csproj.AssemblyReference.cache
+C:\Users\Fatih_Kucukkara\source\repos\Net7MinimalApiFullCourse\Application\obj\Debug\net7.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fatih_Kucukkara\source\repos\Net7MinimalApiFullCourse\Application\obj\Debug\net7.0\Application.AssemblyInfoInputs.cache
+C:\Users\Fatih_Kucukkara\source\repos\Net7MinimalApiFullCourse\Application\obj\Debug\net7.0\Application.AssemblyInfo.cs
+C:\Users\Fatih_Kucukkara\source\repos\Net7MinimalApiFullCourse\Application\obj\Debug\net7.0\Application.csproj.CoreCompileInputs.cache
+C:\Users\Fatih_Kucukkara\source\repos\Net7MinimalApiFullCourse\Application\obj\Debug\net7.0\Application.dll
+C:\Users\Fatih_Kucukkara\source\repos\Net7MinimalApiFullCourse\Application\obj\Debug\net7.0\refint\Application.dll
+C:\Users\Fatih_Kucukkara\source\repos\Net7MinimalApiFullCourse\Application\obj\Debug\net7.0\Application.pdb
+C:\Users\Fatih_Kucukkara\source\repos\Net7MinimalApiFullCourse\Application\obj\Debug\net7.0\ref\Application.dll
