@@ -1,80 +1,91 @@
+using AutoFixture;
+using AutoFixture.AutoMoq;
 using Domain.Models;
 using MinimalApi.Mediator.Commands;
 using MinimalApi.Mediator.Handlers;
 using Moq;
 
-namespace Test.UnitTests
+namespace Test.UnitTests;
+public class PostCommandHandlerUnitTests
 {
-    public class PostCommandHandlerUnitTests
+    private readonly Mock<IRepository<Post>> _postRepository;
+    public PostCommandHandlerUnitTests()
     {
-        private readonly Mock<IRepository<Post>> _postRepository;
-        public PostCommandHandlerUnitTests()
-        {
-            _postRepository = new();
-        }
+        _postRepository = new();
+    }
 
-        [Fact]
-        public async Task Handle_ShouldReturnSuccess_WhenPostModelValid()
-        {
-            //Arrange
-            var post = new Post() { Content = "Unit Test 101" };
+    [Fact]
+    public async Task Add_AddPost_ReturnsSameProduct()
+    {
+        //Arrange
+        var post = new Post() { Content = "Unit Test 101" };
 
-            var createPostCommand = new CreatePost()
-            { Post = post };
+        var createPostCommand = new CreatePost()
+        { Post = post };
 
-            _postRepository.Setup(
-                s => s.CreateAsync(It.IsAny<Post>()))
-                .ReturnsAsync(post);
+        _postRepository.Setup(
+            s => s.CreateAsync(It.IsAny<Post>()))
+            .ReturnsAsync(post);
 
-            var _handler = new CreatePostHandler(_postRepository.Object);
+        var _handler = new CreatePostHandler(_postRepository.Object);
 
-            //Act
-            var result = await _handler.Handle(createPostCommand, default);
+        //Act
+        var result = await _handler.Handle(createPostCommand, default);
 
-            //Assert
-            Assert.NotNull(result);
-        }
+        //Assert
+        Assert.NotNull(result);
+    }
 
-        [Fact]
-        public async Task Handle_ShouldReturnSuccess_WhenPutModelValid()
-        {
-            //Arrange
-            var post = new Post() { Content = "Unit Test 101" };
+    [Fact]
+    public async Task Update_UpdatePostWithAutoFixture_ReturnsSameProduct()
+    {
+        //Arrange            
+        var fixture = new Fixture().Customize(new AutoMoqCustomization());
 
-            var createPostCommand = new UpdatePost()
-            { Id = 1, Content = "Updated Content" };
+        var post = fixture.Build<Post>()
+               .With(n => n.Id, 1)
+               .With(n => n.Content, "Updated Content 2")
+           .Create();
 
-            _postRepository.Setup(
-                s => s.UpdateAsync(It.IsAny<Post>()))
-                .ReturnsAsync(post);
+        var createPostCommand = fixture.Build<UpdatePost>()
+                   .With(n => n.Id, 1)
+                   .With(n => n.Content, "Updated Content 2")
+               .Create();
 
-            var _handler = new UpdatePostHandler(_postRepository.Object);
+        var _postRepositoryFixture = fixture.Freeze<Mock<IRepository<Post>>>();
+        _postRepositoryFixture.Setup(
+            s => s.UpdateAsync(It.IsAny<Post>()))
+            .ReturnsAsync(post);
 
-            //Act
-            var result = await _handler.Handle(createPostCommand, default);
+        var _handler = fixture.Create<UpdatePostHandler>();
 
-            //Assert
-            Assert.NotNull(result);
-        }
+        //Act
+        var result = await _handler.Handle(createPostCommand, default);
 
-        [Fact]
-        public async Task Handle_ShouldReturnSuccess_WhenDeleteModelValid()
-        {
-            //Arrange
-            var deletePostCommand = new DeletePost()
-            { Id = 1 };
+        //Assert
+        Assert.NotNull(result);
+    }
 
-            _postRepository.Setup(
-                s => s.DeleteAsync(It.IsAny<int>()));
+    [Fact]
+    public async Task Delete_DeletePost_ReturnsNothing()
+    {
+        //Arrange
+        var fixture = new Fixture().Customize(new AutoMoqCustomization());
 
+        var deletePostCommand = fixture.Build<DeletePost>()
+              .With(n => n.Id, 1)
+          .Create();
 
-            var _handler = new DeletePostHandler(_postRepository.Object);
+        var _postRepositoryFixture = fixture.Freeze<Mock<IRepository<Post>>>();
+        _postRepositoryFixture.Setup(
+            s => s.DeleteAsync(It.IsAny<int>()));
 
-            //Act
-            await _handler.Handle(deletePostCommand, default);
+        var _handler = fixture.Create<DeletePostHandler>();
 
-            //Assert
-            _postRepository.Verify(v => v.DeleteAsync(It.IsAny<int>()), Times.Once);
-        }
+        //Act
+        await _handler.Handle(deletePostCommand, default);
+
+        //Assert
+        _postRepositoryFixture.Verify(v => v.DeleteAsync(It.IsAny<int>()), Times.Once);
     }
 }

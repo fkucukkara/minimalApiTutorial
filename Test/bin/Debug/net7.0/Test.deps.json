@@ -35,6 +35,8 @@
     ".NETCoreApp,Version=v7.0": {
       "Test/1.0.0": {
         "dependencies": {
+          "AutoFixture": "4.18.0",
+          "AutoFixture.AutoMoq": "4.18.0",
           "Microsoft.AspNetCore.Mvc.Testing": "7.0.5",
           "Microsoft.NET.Test.Sdk": "17.5.0",
           "MinimalApi": "1.0.0",
@@ -185,9 +187,9 @@
           "System.Collections.Immutable": "7.0.0.0",
           "System.Collections.NonGeneric": "7.0.0.0",
           "System.Collections.Specialized": "7.0.0.0",
-          "System.ComponentModel.Annotations": "7.0.0.0",
+          "System.ComponentModel.Annotations.Reference": "7.0.0.0",
           "System.ComponentModel.DataAnnotations": "4.0.0.0",
-          "System.ComponentModel": "7.0.0.0",
+          "System.ComponentModel.Reference": "7.0.0.0",
           "System.ComponentModel.EventBasedAsync": "7.0.0.0",
           "System.ComponentModel.Primitives": "7.0.0.0",
           "System.ComponentModel.TypeConverter": "7.0.0.0",
@@ -346,6 +348,36 @@
           "Test.dll": {}
         }
       },
+      "AutoFixture/4.18.0": {
+        "dependencies": {
+          "Fare": "2.1.1",
+          "System.ComponentModel.Annotations": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoFixture.dll": {
+            "assemblyVersion": "4.18.0.0",
+            "fileVersion": "4.18.0.688"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoFixture.dll": {}
+        }
+      },
+      "AutoFixture.AutoMoq/4.18.0": {
+        "dependencies": {
+          "AutoFixture": "4.18.0",
+          "Moq": "4.18.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoFixture.AutoMoq.dll": {
+            "assemblyVersion": "4.18.0.0",
+            "fileVersion": "4.18.0.688"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoFixture.AutoMoq.dll": {}
+        }
+      },
       "Azure.Core/1.24.0": {
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
@@ -401,6 +433,20 @@
         }
       },
       "coverlet.collector/3.2.0": {},
+      "Fare/2.1.1": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Fare.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.1/Fare.dll": {}
+        }
+      },
       "MediatR/12.0.1": {
         "dependencies": {
           "MediatR.Contracts": "2.0.1",
@@ -1477,6 +1523,26 @@
           "System.Runtime.Extensions": "4.3.0",
           "System.Threading": "4.3.0",
           "System.Threading.Tasks": "4.3.0"
+        }
+      },
+      "System.ComponentModel/4.3.0": {
+        "dependencies": {
+          "System.Runtime": "4.3.0"
+        }
+      },
+      "System.ComponentModel.Annotations/4.3.0": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.ComponentModel": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0"
         }
       },
       "System.Configuration.ConfigurationManager/5.0.0": {
@@ -3103,7 +3169,7 @@
         },
         "compileOnly": true
       },
-      "System.ComponentModel.Annotations/7.0.0.0": {
+      "System.ComponentModel.Annotations.Reference/7.0.0.0": {
         "compile": {
           "System.ComponentModel.Annotations.dll": {}
         },
@@ -3115,7 +3181,7 @@
         },
         "compileOnly": true
       },
-      "System.ComponentModel/7.0.0.0": {
+      "System.ComponentModel.Reference/7.0.0.0": {
         "compile": {
           "System.ComponentModel.dll": {}
         },
@@ -4029,6 +4095,20 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AutoFixture/4.18.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xITUSenQsEW3RxXzcDPvxA33PGEQHxfvYjEbiai8URCcmq+osECGdLqGfHmMmcttndWgLxYCV7bRIm089fu7HA==",
+      "path": "autofixture/4.18.0",
+      "hashPath": "autofixture.4.18.0.nupkg.sha512"
+    },
+    "AutoFixture.AutoMoq/4.18.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bKYr0AykPInIu4OBKoujK3w8j1N4czz+EAbX93DFG/w4mM9otvbgFT6FUlIvqfcB08gRuRSCqmHhpWa0Thgh6g==",
+      "path": "autofixture.automoq/4.18.0",
+      "hashPath": "autofixture.automoq.4.18.0.nupkg.sha512"
+    },
     "Azure.Core/1.24.0": {
       "type": "package",
       "serviceable": true,
@@ -4056,6 +4136,13 @@
       "sha512": "sha512-xjY8xBigSeWIYs4I7DgUHqSNoGqnHi7Fv7/7RZD02rvZyG3hlsjnQKiVKVWKgr9kRKgmV+dEfu8KScvysiC0Wg==",
       "path": "coverlet.collector/3.2.0",
       "hashPath": "coverlet.collector.3.2.0.nupkg.sha512"
+    },
+    "Fare/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HaI8puqA66YU7/9cK4Sgbs1taUTP1Ssa4QT2PIzqJ7GvAbN1QgkjbRsjH+FSbMh1MJdvS0CIwQNLtFT+KF6KpA==",
+      "path": "fare/2.1.1",
+      "hashPath": "fare.2.1.1.nupkg.sha512"
     },
     "MediatR/12.0.1": {
       "type": "package",
@@ -4679,6 +4766,20 @@
       "sha512": "sha512-ztl69Xp0Y/UXCL+3v3tEU+lIy+bvjKNUmopn1wep/a291pVPK7dxBd6T7WnlQqRog+d1a/hSsgRsmFnIBKTPLQ==",
       "path": "system.collections.concurrent/4.3.0",
       "hashPath": "system.collections.concurrent.4.3.0.nupkg.sha512"
+    },
+    "System.ComponentModel/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VyGn1jGRZVfxnh8EdvDCi71v3bMXrsu8aYJOwoV7SNDLVhiEqwP86pPMyRGsDsxhXAm2b3o9OIqeETfN5qfezw==",
+      "path": "system.componentmodel/4.3.0",
+      "hashPath": "system.componentmodel.4.3.0.nupkg.sha512"
+    },
+    "System.ComponentModel.Annotations/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SY2RLItHt43rd8J9D8M8e8NM4m+9WLN2uUd9G0n1I4hj/7w+v3pzK6ZBjexlG1/2xvLKQsqir3UGVSyBTXMLWA==",
+      "path": "system.componentmodel.annotations/4.3.0",
+      "hashPath": "system.componentmodel.annotations.4.3.0.nupkg.sha512"
     },
     "System.Configuration.ConfigurationManager/5.0.0": {
       "type": "package",
@@ -5942,7 +6043,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.ComponentModel.Annotations/7.0.0.0": {
+    "System.ComponentModel.Annotations.Reference/7.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -5952,7 +6053,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.ComponentModel/7.0.0.0": {
+    "System.ComponentModel.Reference/7.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
