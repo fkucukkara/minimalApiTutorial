@@ -1,7 +1,5 @@
-﻿namespace Domain.Models
+﻿namespace Domain.Models;
+public interface IEntity
 {
-    public interface IEntity
-    {
-        public int Id { get; set; }
-    }
+    public int Id { get; set; }
 }

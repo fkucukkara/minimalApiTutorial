@@ -1,35 +1,33 @@
 ﻿using System.Net;
 using System.Text.Json;
 
-namespace MinimalApi.Middleware
+namespace MinimalApi.Middleware;
+public class ExceptionMiddleware
 {
-    public class ExceptionMiddleware
+    private readonly RequestDelegate _next;
+    private readonly ILogger<ExceptionMiddleware> _logger;
+    public ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddleware> logger)
     {
-        private readonly RequestDelegate _next;
-        private readonly ILogger<ExceptionMiddleware> _logger;
-        public ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddleware> logger)
+        _next = next;
+        _logger = logger;
+    }
+
+    public async Task Invoke(HttpContext context)
+    {
+        try
         {
-            _next = next;
-            _logger = logger;
+            await _next(context);
         }
-
-        public async Task Invoke(HttpContext context)
+        catch (Exception ex)
         {
-            try
-            {
-                await _next(context);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"{nameof(ExceptionMiddleware)} Exception: {ex.Message}", ex);
+            _logger.LogError($"{nameof(ExceptionMiddleware)} Exception: {ex.Message}", ex);
 
-                var response = context.Response;
-                response.ContentType = "application/json";
-                response.StatusCode = (int)HttpStatusCode.InternalServerError;
+            var response = context.Response;
+            response.ContentType = "application/json";
+            response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
-                var result = JsonSerializer.Serialize(new { message = "An Exception Occured!" });
-                await response.WriteAsync(result);
-            }
+            var result = JsonSerializer.Serialize(new { message = "An Exception Occured!" });
+            await response.WriteAsync(result);
         }
     }
 }

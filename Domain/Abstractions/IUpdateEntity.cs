@@ -1,7 +1,5 @@
-﻿namespace Domain.Abstractions
+﻿namespace Domain.Abstractions;
+public interface IUpdateEntity
 {
-    public interface IUpdateEntity
-    {
-        public DateTime? UpdatedOn { get; set; }
-    }
+    public DateTime? UpdatedOn { get; set; }
 }

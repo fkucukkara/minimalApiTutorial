@@ -1,12 +1,10 @@
 ﻿using MinimalApi.Middleware;
 
-namespace MinimalApi.Extensions
+namespace MinimalApi.Extensions;
+public static class MiddlewareExtensions
 {
-    public static class MiddlewareExtensions
+    public static void UseExceptionMiddleware(this WebApplication app)
     {
-        public static void UseExceptionMiddleware(this WebApplication app)
-        {
-            app.UseMiddleware<ExceptionMiddleware>();
-        }
+        app.UseMiddleware<ExceptionMiddleware>();
     }
 }

@@ -1,13 +1,11 @@
 ﻿using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Data
+namespace Data;
+public class SocialDbContext : DbContext
 {
-    public class SocialDbContext : DbContext
-    {
-        public SocialDbContext(DbContextOptions<SocialDbContext> options) : base(options)
-        { }
+    public SocialDbContext(DbContextOptions<SocialDbContext> options) : base(options)
+    { }
 
-        public DbSet<Post> Posts { get; set; }
-    }
+    public DbSet<Post> Posts { get; set; }
 }

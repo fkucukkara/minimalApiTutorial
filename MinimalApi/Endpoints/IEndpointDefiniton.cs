@@ -1,7 +1,5 @@
-﻿namespace MinimalApi.Endpoints
+﻿namespace MinimalApi.Endpoints;
+public interface IEndpointDefiniton
 {
-    public interface IEndpointDefiniton
-    {
-        void RegisterEndpoints(WebApplication app);
-    }
+    void RegisterEndpoints(WebApplication app);
 }

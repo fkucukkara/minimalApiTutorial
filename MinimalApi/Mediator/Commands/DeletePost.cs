@@ -1,9 +1,7 @@
 ﻿using MediatR;
 
-namespace MinimalApi.Mediator.Commands
+namespace MinimalApi.Mediator.Commands;
+public class DeletePost : IRequest
 {
-    public class DeletePost : IRequest
-    {
-        public int Id { get; set; }
-    }
+    public int Id { get; set; }
 }

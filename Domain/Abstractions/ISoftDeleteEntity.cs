@@ -1,8 +1,6 @@
-﻿namespace Domain.Abstractions
+﻿namespace Domain.Abstractions;
+public interface ISoftDeleteEntity
 {
-    public interface ISoftDeleteEntity
-    {
-        public bool IsDeleted { get; set; }
-        public DateTime? DeletedOn { get; set; }
-    }
+    public bool IsDeleted { get; set; }
+    public DateTime? DeletedOn { get; set; }
 }

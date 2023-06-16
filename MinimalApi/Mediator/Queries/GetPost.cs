@@ -1,10 +1,8 @@
 ﻿using Domain.Models;
 using MediatR;
 
-namespace MinimalApi.Mediator.Queries
+namespace MinimalApi.Mediator.Queries;
+public class GetPost : IRequest<Post>
 {
-    public class GetPost : IRequest<Post>
-    {
-        public int Id { get; set; }
-    }
+    public int Id { get; set; }
 }

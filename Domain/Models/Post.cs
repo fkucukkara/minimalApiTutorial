@@ -1,7 +1,5 @@
-﻿namespace Domain.Models
+﻿namespace Domain.Models;
+public class Post : Entity
 {
-    public class Post : Entity
-    {
-        public string? Content { get; set; }
-    }
+    public string? Content { get; set; }
 }
