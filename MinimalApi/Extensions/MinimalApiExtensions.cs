@@ -5,6 +5,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using MinimalApi.Behaviours;
 using MinimalApi.Endpoints;
+using MinimalApi.Mediator.Commands;
 using MinimalApi.Services;
 using System.Reflection;
 
@@ -20,6 +21,7 @@ public static class MinimalApiExtensions
         builder.Services.AddMediatR(cfg =>
         {
             cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly());
+            cfg.AddBehavior<IPipelineBehavior<CreatePost, Post>, CreatePostValidationBehaviour<CreatePost, Post>>();
             cfg.AddOpenBehavior(typeof(PerformanceBehaviour<,>));
         });
 
