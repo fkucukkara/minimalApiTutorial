@@ -1,7 +1,9 @@
 ﻿using Data;
 using Data.Repository;
 using Domain.Models;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
+using MinimalApi.Behaviours;
 using MinimalApi.Endpoints;
 using MinimalApi.Services;
 using System.Reflection;
@@ -18,7 +20,9 @@ public static class MinimalApiExtensions
         builder.Services.AddMediatR(cfg =>
         {
             cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly());
+            cfg.AddOpenBehavior(typeof(PerformanceBehaviour<,>));
         });
+
         builder.Services.AddScoped<IPostService, PostService>();
     }
 
