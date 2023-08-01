@@ -21,8 +21,8 @@ public static class MinimalApiExtensions
         builder.Services.AddMediatR(cfg =>
         {
             cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly());
+            cfg.AddOpenBehavior(typeof(PerformanceBehaviour<,>));            
             cfg.AddBehavior<IPipelineBehavior<CreatePost, Post>, CreatePostValidationBehaviour<CreatePost, Post>>();
-            cfg.AddOpenBehavior(typeof(PerformanceBehaviour<,>));
         });
 
         builder.Services.AddScoped<IPostService, PostService>();
