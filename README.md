@@ -1,7 +1,8 @@
 ## minimalApiTutorial
 
-It is a .Net 7 Workshop project with the tech-stack below:
-- C# .NET 7
+.Net 8 Workshop with Minimal API:
+
+- C# .NET 8
 - xUnit
 - Autofixture
 - Dapr
