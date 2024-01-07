@@ -18,7 +18,7 @@ namespace MinimalApi.Behaviours
 
             if (request is CreatePost createPost)
             {
-                if (createPost.Post.Content == "-1")
+                if (string.IsNullOrEmpty(createPost?.Post?.Content))
                 {
                     _logger.LogError($"CreatePost has invalid Content!");
                     throw new ArgumentException("CreatePost has invalid Content");
