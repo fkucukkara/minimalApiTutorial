@@ -2,10 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 
 namespace Data;
-public class SocialDbContext : DbContext
+public class SocialDbContext(DbContextOptions<SocialDbContext> options) : DbContext(options)
 {
-    public SocialDbContext(DbContextOptions<SocialDbContext> options) : base(options)
-    { }
-
-    public DbSet<Post> Posts { get; set; }
+    public DbSet<Post>? Posts { get; set; }
 }

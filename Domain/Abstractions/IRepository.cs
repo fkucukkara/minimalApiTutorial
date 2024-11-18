@@ -2,7 +2,7 @@
 public interface IRepository<TEntity> where TEntity : IEntity
 {
     IQueryable<TEntity> GetQueryable();
-    Task<TEntity> GetByIdAsync(int id);
+    Task<TEntity?> GetByIdAsync(int id);
     Task<TEntity> CreateAsync(TEntity entity);
     Task<IEnumerable<TEntity>> CreateRangeAsync(IEnumerable<TEntity> entities);
     Task<TEntity> UpdateAsync(TEntity entity);

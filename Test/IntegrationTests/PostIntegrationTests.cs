@@ -50,7 +50,7 @@ public class PostIntegrationTests
         using var client = application.CreateClient();
         using var response = await client.PutAsJsonAsync($"/api/v1/posts/{id}", new Post { Content = "xUnit 101" });
 
-        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
     }
 
     [Theory]

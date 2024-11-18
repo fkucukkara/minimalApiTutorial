@@ -1,5 +1,5 @@
 ﻿namespace Domain.Models;
-public class Post : Entity
+public record Post : Entity
 {
     public string? Content { get; set; }
 }

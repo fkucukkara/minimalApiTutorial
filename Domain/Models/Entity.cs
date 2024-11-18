@@ -1,7 +1,7 @@
 ﻿using Domain.Abstractions;
 
 namespace Domain.Models;
-public class Entity : IEntity, ICreateEntity, IUpdateEntity, ISoftDeleteEntity
+public record Entity : IEntity, ICreateEntity, IUpdateEntity, ISoftDeleteEntity
 {
     public int Id { get; set; }
     public DateTime? CreatedOn { get; set; }

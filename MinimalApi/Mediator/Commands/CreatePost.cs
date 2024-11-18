@@ -2,7 +2,7 @@
 using MediatR;
 
 namespace MinimalApi.Mediator.Commands;
-public class CreatePost : IRequest<Post>
+public record CreatePost : IRequest<Post>
 {
     public Post? Post { get; set; }
 }
