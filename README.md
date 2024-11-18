@@ -1,8 +1,8 @@
 ## minimalApiTutorial
 
-.Net 8 Workshop with Minimal API:
+.Net 9 Workshop with Minimal API:
 
-- C# .NET 8
+- C# .NET 9
 - xUnit
 - Autofixture
 - Dapr
