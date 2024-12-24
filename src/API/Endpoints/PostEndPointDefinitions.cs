@@ -1,19 +1,18 @@
 ﻿using API.Filters;
 using API.Services;
-using Domain.Models;
 
 namespace API.Endpoints;
 public class PostEndPointDefinitions : IEndpointDefiniton
 {
     public void RegisterEndpoints(WebApplication app)
     {
-        var post = app.MapGroup("/api/v1/posts");
+        var v1 = app.MapGroup("/api/v1/posts");
 
-        post.MapGet("/", GetAllPosts);
-        post.MapGet("/{id}", GetPostById).WithName("GetPostById");
-        post.MapPost("/", CreatePost).AddEndpointFilter<PostValidationFilter>();
-        post.MapPut("/{id}", UpdatePost);
-        post.MapDelete("/{id}", DeletePost);
+        v1.MapGet("/", GetAllPosts);
+        v1.MapGet("/{id}", GetPostById);
+        v1.MapPost("/", CreatePost).AddEndpointFilter<PostValidationFilter>();
+        v1.MapPut("/{id}", UpdatePost);
+        v1.MapDelete("/{id}", DeletePost);
     }
 
     private async Task<IResult> GetAllPosts(IPostService _postService)
@@ -34,7 +33,7 @@ public class PostEndPointDefinitions : IEndpointDefiniton
         if (string.IsNullOrEmpty(post.Content)) return TypedResults.BadRequest();
 
         var createdPost = await _postService.CreatePost(post);
-        return Results.CreatedAtRoute("GetPostById", new { createdPost.Id }, createdPost);
+        return TypedResults.Created($"/api/v1/posts/{createdPost.Id}", createdPost);
     }
 
     private async Task<IResult> UpdatePost(IPostService _postService, int id, Post post)

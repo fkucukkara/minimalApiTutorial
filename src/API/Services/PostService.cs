@@ -1,7 +1,4 @@
-﻿using API.Mediator.Commands;
-using API.Mediator.Queries;
-using Domain.Models;
-using MediatR;
+﻿using API.Mediator.Queries;
 
 namespace API.Services;
 public class PostService(IMediator mediator) : IPostService

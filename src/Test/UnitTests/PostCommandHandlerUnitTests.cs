@@ -1,9 +1,5 @@
 using API.Mediator.Commands;
 using API.Mediator.Handlers;
-using AutoFixture;
-using AutoFixture.AutoMoq;
-using Domain.Models;
-using Moq;
 
 namespace Test.UnitTests;
 public class PostCommandHandlerUnitTests

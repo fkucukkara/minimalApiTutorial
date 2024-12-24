@@ -1,6 +1,4 @@
-﻿using Domain.Models;
-
-namespace API.Services;
+﻿namespace API.Services;
 public interface IPostService
 {
     Task<IEnumerable<Post>> GetAllPosts();

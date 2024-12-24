@@ -1,7 +1,4 @@
-﻿using API.Mediator.Commands;
-using MediatR;
-
-namespace API.Behaviours;
+﻿namespace API.Behaviours;
 public class CreatePostValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     where TRequest : IRequest<TResponse>
 {
@@ -17,10 +14,9 @@ public class CreatePostValidationBehaviour<TRequest, TResponse> : IPipelineBehav
 
         if (request is CreatePost createPost)
         {
-            if (string.IsNullOrEmpty(createPost?.Post?.Content))
+            if (createPost.Post?.Content?.Contains("Invalid", StringComparison.OrdinalIgnoreCase) is true)
             {
-                _logger.LogError($"CreatePost has invalid Content!");
-                throw new ArgumentException("CreatePost has invalid Content");
+                throw new ArgumentException("The post content contains invalid text.", nameof(createPost));
             }
         }
 

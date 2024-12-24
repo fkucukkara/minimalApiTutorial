@@ -1,6 +1,4 @@
 ﻿using API.Mediator.Queries;
-using Domain.Models;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Mediator.Handlers;

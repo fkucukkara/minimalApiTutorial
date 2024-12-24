@@ -1,6 +1,4 @@
 ﻿using API.Mediator.Queries;
-using Domain.Models;
-using MediatR;
 
 namespace API.Mediator.Handlers;
 public class GetPostHandler(IRepository<Post> postRepository) : IRequestHandler<GetPost, Post>

@@ -1,7 +1,5 @@
 using API.Mediator.Handlers;
 using API.Mediator.Queries;
-using Domain.Models;
-using Moq;
 
 namespace Test.UnitTests;
 public class PostQueryHandlerUnitTests

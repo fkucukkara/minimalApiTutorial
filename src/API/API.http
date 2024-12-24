@@ -1,0 +1,27 @@
+# Test API Endpoints for PostEndPointDefinitions
+@API_HostAddress = https://localhost:7290
+
+### Get All Posts
+GET {{API_HostAddress}}/api/v1/posts
+
+### Get Post by ID
+GET {{API_HostAddress}}/api/v1/posts/1
+
+### Create a Post
+POST {{API_HostAddress}}/api/v1/posts
+Content-Type: application/json
+
+{
+  "content": "This is a new post"
+}
+
+### Update a Post
+PUT {{API_HostAddress}}/api/v1/posts/1
+Content-Type: application/json
+
+{
+  "content": "This is an updated post"
+}
+
+### Delete a Post
+DELETE {{API_HostAddress}}/api/v1/posts/2

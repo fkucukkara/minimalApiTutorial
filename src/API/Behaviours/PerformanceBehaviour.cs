@@ -1,5 +1,4 @@
-﻿using MediatR;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 namespace API.Behaviours;
 public class PerformanceBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
