@@ -31,25 +31,20 @@ This project is a **.NET 9 Minimal API** built as part of a workshop to demonstr
 ## How to Run
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/minimal-api-workshop.git
+   git clone https://github.com/fkucukkara/minimalAPIPlayground.git
    ```
 
-2. Navigate to the project directory:
-   ```bash
-   cd minimal-api-workshop
-   ```
-
-3. Restore dependencies:
+2. Restore dependencies:
    ```bash
    dotnet restore
    ```
 
-4. Apply migrations and update the database:
+3. Apply migrations and update the database:
    ```bash
    dotnet ef database update
    ```
 
-5. Run the application:
+4. Run the application:
    ```bash
    dotnet run
    ```
