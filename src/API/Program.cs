@@ -8,8 +8,6 @@ builder.RegisterServices();
 
 var app = builder.Build();
 
-app.Logger.LogInformation("App is started!");
-
 app.UseExceptionMiddleware();
 app.UseHttpsRedirection();
 app.RegisterEndpointDefinitons();
