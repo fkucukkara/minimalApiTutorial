@@ -1,0 +1,26 @@
+<Project>
+	<PropertyGroup>
+		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+		<CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+		<AspnetVersion>9.0.0</AspnetVersion>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageVersion Include="MediatR" Version="12.4.1" />
+		<PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="$(AspnetVersion)" />
+		<PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(AspnetVersion)" />
+		<PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="$(AspnetVersion)" />
+		<PackageVersion Include="Swashbuckle.AspNetCore" Version="7.0.0" />
+		<PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="$(AspnetVersion)"/>
+		<PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(AspnetVersion)" />
+		<PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="$(AspnetVersion)"/>
+		<PackageVersion Include="AutoFixture" Version="4.18.1" />
+		<PackageVersion Include="AutoFixture.AutoMoq" Version="4.18.1" />
+		<PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="$(AspnetVersion)" />
+		<PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+		<PackageVersion Include="Moq" Version="4.20.72" />
+		<PackageVersion Include="System.Net.Http" Version="4.3.4" />
+		<PackageVersion Include="xunit" Version="2.9.2" />
+		<PackageVersion Include="xunit.runner.visualstudio" Version="2.8.2" />
+		<PackageVersion Include="coverlet.collector" Version="6.0.2" />
+	</ItemGroup>
+</Project>
